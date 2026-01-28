@@ -60,23 +60,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Timer? _timer; // The Timer instance
   bool _isRunning = false;
 
-  void _handleTimer() {
-    if (_isRunning) {
-    
-      _timer?.cancel();
-      setState(() {
-        _isRunning = false;
-      });
-    } else {
-      
-      _isRunning = true;
-      _timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
-        setState(() {
-          _seconds++; 
+    void _handleTimer() {
+        if (_isRunning) {
+        
+          _timer?.cancel();
+          setState(() {
+            _isRunning = false;
         });
-      });
+      } else {
+        
+        _isRunning = true;
+        _timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
+          setState(() {
+            _seconds++; 
+          });
+        });
+      }
     }
-  }
 
   @override
   void dispose() {
@@ -108,17 +108,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
       bottomNavigationBar: const BottomAppBar(
         shape: CircularNotchedRectangle(),
-        notchMargin: 8.0,
+        notchMargin: 5.0,
         child: SizedBox(height: 40.0),
       ),
       
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
+        backgroundColor: _isRunning ? Colors.red : Colors.blue,
         shape: const CircleBorder(),
         onPressed: _handleTimer,
         tooltip: _isRunning ? 'Stop' : 'Start',
-        child: Icon(_isRunning ? Icons.pause : Icons.play_arrow),
+        child: Icon(_isRunning ? Icons.square : Icons.play_circle_filled_outlined),
       ),
     );
   }
