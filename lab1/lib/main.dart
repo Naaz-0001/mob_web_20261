@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Lab N1'),
+      home: const MyHomePage(title: 'Lab N1',),
     );
   }
 }
@@ -96,10 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Timer:', style: TextStyle(fontSize: 18)),
+            const Text('Timer:', style: TextStyle(fontSize: 30)),
             Text(
               '$_seconds',
-              style: const TextStyle(fontSize: 15, color: Colors.grey),
+              style: const TextStyle(fontSize: 25, color: Colors.grey),
             ),
         
           ],
@@ -109,12 +109,12 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: const BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
-        child: SizedBox(height: 50.0),
+        child: SizedBox(height: 40.0),
       ),
       
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.red,
         shape: const CircleBorder(),
         onPressed: _handleTimer,
         tooltip: _isRunning ? 'Stop' : 'Start',
