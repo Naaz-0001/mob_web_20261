@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage>
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ScaleTransition(
-              scale: Tween(begin: 0.3, end: 2.0).animate(_controller)
+              scale: Tween(begin: 0.3, end: 2s.0).animate(_controller)
               // this is for BONUS
                 ..addStatusListener((status) {
                   if (status == AnimationStatus.completed) {
